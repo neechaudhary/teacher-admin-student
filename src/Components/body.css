@@ -1,0 +1,125 @@
+.cokuheading{
+    font-size: 30px;
+    color: rgb(66, 33, 250);
+    font-weight: 600;
+}
+.socialIcons{
+    display: flex;
+    justify-content: center;
+    margin-top: 17px;
+}
+@media (max-width:750px) {
+    .right-content {
+        display: none;
+
+    }
+
+    .left-content {
+        width: 100%;
+    }
+
+    form {
+        display: block;
+
+    }
+}
+ @media(max-width:550px){
+    .inputfields{
+        display: block;
+        width: 100%;
+    }
+ }
+
+@media (max-width:450) {
+    .form {
+        display: block;
+        width: 70%;
+    }
+}
+
+@media (max-width:500px) {
+    .headingOne {
+        font-size: 50px;
+    }
+}
+
+@media (min-width:1171px) {
+    .information {
+        margin-top: 4px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width:1060px) {
+    .reasonsitems {
+        display: block;
+        margin: auto;
+
+    }
+
+    .bsImg {
+        width: 82px;
+        height: 82px;
+        margin: auto;
+
+    }
+
+    .bannerItemsInside {
+        display: block;
+        margin: auto;
+    }
+
+    .insideBitems {
+        width: 100%;
+    }
+
+    .additionalHeading {
+        font-size: 40px;
+        line-height: 50px;
+    }
+
+    .additonallItemsInside {
+        display: block;
+        margin: auto;
+    }
+
+    .additionalDivItems {
+        width: 100%;
+    }
+
+    .additonalHeadingLower {
+        line-height: 50px;
+    }
+    .footerwrapper{
+        display: block;
+        margin: auto;
+    }
+    .rightFooter{
+        display: block;
+        margin: auto;
+    }
+    .footerText{
+        text-align: center;
+        width: 100%;
+        line-height: 20px;
+        margin:20px;
+    }
+}
+
+@media(max-width:640px) {
+    .Barheading {
+        line-height: 65px;
+    }
+}
+@media(max-width:500px){
+    .submit{
+        width: 7rem;
+        }
+}
+@media(max-width:400px){
+    .content{
+        padding-left: 1rem;
+    }
+}

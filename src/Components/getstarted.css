@@ -1,0 +1,32 @@
+.mian{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.mianContainer {
+    display: flex;
+    max-width: 1130px;
+    margin-top: 40px;
+    width: 100%;
+    justify-content: space-between;
+    text-align: center;
+}
+
+ 
+.arrow {
+    height: 30px;
+    width: 30px;
+    background-color: rgb(219 221 225);
+    border: 1px;
+    border-radius: 20px;
+    text-align: center;
+}
+.insideCompo{
+    display: flex;
+    max-width: 448px;
+}
+.headinside{
+    width: 100%;
+
+}
