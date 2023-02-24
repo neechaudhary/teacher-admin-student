@@ -72,9 +72,11 @@ export default function Signin() {
                 
                 </div>
                 <div className="button">
+                  <Link to="/register">
                   <button className="contButtonwhite">
                     Create Student account
                   </button>
+                  </Link>
                 </div>
                 <Link to="/teacherlogin">
                   <div className="links">

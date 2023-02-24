@@ -18,15 +18,15 @@ import Teacher_mngmnt from "./Teacher_mngmnt";
 export default function Body() {
   return (
     <>
-    <Teacher_mngmnt />
-    <Student_upload />
+    {/* <Teacher_mngmnt />
+    <Student_upload /> */}
     
       {/* starting section of website */}
       <div className="section max-w-full       ">
         {/* top part start from here  */}
         <div className="content max-w-7xl pt-4 px-8  m-auto flex pb-8  ">
           {/* Left-side content of website ---------------------------------------------------------------------- */}
-          <div className="left-content flex-col text-left  w-3/5 pt-10 items-start text-sky-500 flex-row">
+          <div className="left-content  text-left  w-3/5 pt-10 items-start text-sky-500 flex-row">
             {/* top link */}
             <a
               href=""

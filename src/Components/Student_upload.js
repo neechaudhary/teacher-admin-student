@@ -15,6 +15,7 @@ const Student_upload = () => {
           'Content-Type': 'multipart/form-data',
           'token': localStorage.getItem('token')
         }
+        
       })
       .then((res) => {
         console.log(res.data);

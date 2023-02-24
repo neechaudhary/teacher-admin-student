@@ -23,6 +23,7 @@ export default function TeacherLogin() {
       })
       .then((res) => {
         console.log(res.data);
+        localStorage.setItem("token", res.data.token);
         window.location.href="/teacher-management"
       })
       .catch((err) => {
@@ -74,10 +75,13 @@ export default function TeacherLogin() {
                   </Link>
                 </div>
                 <div className="button">
+                  <Link to="/teacher-register">
                   <button className="contButtonwhite">
                     Create Teacher account
                   </button>
+                  </Link>
                 </div>
+                
                 <Link to="/signin">
                   <div className="links">
                     <a className="hreflink">Click here to Student Login</a>
