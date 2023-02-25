@@ -18,9 +18,9 @@ export default function Signin() {
     axios
       .post(`${API}/signin`, data)
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         localStorage.setItem("token", res.data.token);
-        window.location.href = "/student-upload";
+        window.location.href = "/";
       })
       .catch((err) => {
         console.log(err);

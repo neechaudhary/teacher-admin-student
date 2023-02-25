@@ -18,7 +18,10 @@ const Student_upload = () => {
         
       })
       .then((res) => {
-        console.log(res.data);
+        alert("File uploaded successfully")
+        //reload window
+        window.location.reload()
+        // console.log(res.data);
       })
       .catch((err) => {
         console.log(err);

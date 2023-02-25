@@ -22,9 +22,9 @@ export default function TeacherLogin() {
       
       })
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         localStorage.setItem("token", res.data.token);
-        window.location.href="/teacher-management"
+        window.location.href="/"
       })
       .catch((err) => {
         console.log(err);

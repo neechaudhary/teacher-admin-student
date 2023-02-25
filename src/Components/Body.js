@@ -16,6 +16,8 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Student_upload from "./Student_upload";
 import Teacher_mngmnt from "./Teacher_mngmnt";
 export default function Body() {
+  
+
   return (
     <>
     {/* <Teacher_mngmnt />

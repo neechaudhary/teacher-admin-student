@@ -43,8 +43,10 @@ const Teacher_mngmnt = () => {
         })
             .then(function (response) {
                 // handle success
-                // console.log(response.data)
-                setReviewedPaper(response.data)
+                console.log(response.data)
+                const sliced = response.data.slice(0, 4);
+                setReviewedPaper(sliced);
+               
             })
             .catch(function (error) {
                 // handle error
@@ -63,8 +65,10 @@ const Teacher_mngmnt = () => {
             }
         }).then(function (response) {
             //handle success
-            console.log(response.data)
-            setToBeReviewedPaper(response.data)
+            // console.log(response.data)
+            const sliced = response.data.slice(0, 4);
+            setToBeReviewedPaper(sliced)
+         
         }).catch(function (error) {
             //handle error
             console.log(error)
@@ -86,7 +90,7 @@ const Teacher_mngmnt = () => {
 
         }).then(function (response) {
             //handle success
-            console.log(response.data)
+            // console.log(response.data)
             setChangeStatus(true)
         }).catch(function (error) {
             //handle error
@@ -106,7 +110,7 @@ const Teacher_mngmnt = () => {
                     </div>
                     <div className='bg-[#19BC95] text-white cursor-pointer p-2 w-[200px]'>
                         <Link to="/view-all">
-                        <button >View All</button>
+                            <button >View All</button>
                         </Link>
                     </div>
 
@@ -114,9 +118,16 @@ const Teacher_mngmnt = () => {
                 <div className='px-3'>
 
                     <div className='flex flex-wrap'>
-                        {studentList.map((item, index) => (
+                        {studentList.length == 0 && (
+                             <div className='w-full sm:w-[270px] xl:w-[20%] h-[150px] xl:h-[200px] m-7  bg-[#19BC95] rounded-lg shadow-md text-white flex flex-col justify-center items-center' >
+                                 <div>Empty Name</div>
+                                 <div>Empty Email</div>
+                                 <div></div>
+                             </div>
+                        )}
+                        { studentList.length > 0 && studentList.map((item, index) => (
 
-                            <div className='w-full sm:w-[250px] m-7 h-[150px] bg-[#19BC95] rounded-lg shadow-md text-white flex flex-col justify-center items-center' key={index
+                            <div className='w-full sm:w-[270px] xl:w-[20%] h-[150px] xl:h-[200px] m-7  bg-[#19BC95] rounded-lg shadow-md text-white flex flex-col justify-center items-center' key={index
                             }>
                                 <div>{item.firstName}</div>
                                 <div>{item.email}</div>
@@ -133,64 +144,94 @@ const Teacher_mngmnt = () => {
                         */}
                     </div>
                 </div>
+                {/* =====Reviewed papaer======== */}
                 <div className='flex justify-between  border'>
 
                     <div className='p-2 w-[200px] ml-2 border'>
-                        <button>REVIEWED PAPER</button>
+                        <button> TO BE REVIEWED PAPER</button>
                     </div>
                     <div className='bg-[#19BC95] cursor-pointer text-white p-2 w-[200px] '>
                         <Link to="/reviewed-list">
-                        <button >View All</button>
+                            <button >View All</button>
                         </Link>
                     </div>
 
                 </div>
                 <div className='px-3'>
                     <div className=' flex  flex-wrap'>
-                        {reviewedPaper.map((item, index) => (
-                            <div className='w-full sm:w-[250px] m-7  h-[150px] bg-[#ffc001] rounded-lg shadow-md text-black flex flex-col justify-center items-center' key={index}>
-                                <div>{item.name}</div>
+                        {
+                            reviewedPaper.length ==0 &&(
+                                <div className='w-full sm:w-[270px] xl:w-[20%] h-[150px] xl:h-[200px] m-7 bg-[#ffc001] rounded-lg shadow-md text-black flex flex-col justify-center items-center'>
+                                <div>Empty Name</div>
+                                <div>Empty File Name</div>
+                                
+                                <a target='_blank'
+                                    className='bg-white mt-2 w-[100px] h-[30px] rounded-md text-black px-2'>
+                                    view
+                                </a>
+                            </div>
+                            )
+                        }
+
+                        {reviewedPaper.length > 0 && reviewedPaper.map((item, index) => (
+                            <div className='w-full sm:w-[270px] xl:w-[20%] h-[150px] xl:h-[200px] m-7   bg-[#ffc001] rounded-lg shadow-md text-black flex flex-col justify-center items-center' key={index}>
+                                <div>{item.user.firstName}</div>
                                 <div>{item.file_name}</div>
                                 <div>{item.contactNumber}</div>
-                                <div className='mt-2'>
-                                    <button type='button' onClick={() => changeStatusHandler(item._id)} className='bg-white w-[100px] h-[30px] rounded-md text-black px-2'>view</button>
+                                <a
+                                    href={item.avatar}
+                                    target='_blank'
+                                    onClick={() => changeStatusHandler(item._id)}
+                                    className='bg-white mt-2 w-[100px] h-[30px] rounded-md text-black px-2'>
+                                    view
 
-                                </div>
+                                </a>
+                                
                             </div>
                         ))}
-                        {/* <div className='w-[250px] h-[150px] bg-[#ffc001] rounded-lg shadow-md text-black flex flex-col justify-center items-center'>
-                            <div>Neeraj chaudhary</div>
-                            <div>neeraj@gmail.com</div>
-                            <div>5874457844</div>
-                        </div>
-                       */}
+
                     </div>
 
                 </div>
+
+                {/* ==========to be reviewed paper========= */}
                 <div className='flex justify-between border'>
 
                     <div className='p-2 w-[200px] ml-2 border'>
-                        <button> TO BE REVIEWED PAPER</button>
+                        <button>REVIEWED PAPER</button>
                     </div>
                     <div className='bg-[#19BC95] text-white cursor-pointer p-2 w-[200px] '>
                         <Link to="/to-be-reviewed-list">
-                        <button >View All</button>
+                            <button >View All</button>
                         </Link>
                     </div>
 
                 </div>
                 <div className='px-3'>
                     <div className=' flex flex-wrap'>
-                    {
+                        {toBeReviewedPaper.length === 0 && (
+                        <div className='w-full sm:w-[270px] xl:w-[20%] h-[150px] xl:h-[200px] m-7  bg-indigo-600 rounded-lg shadow-md text-white flex flex-col justify-center items-center' >
+                        <div>Empty Name</div>
+                        <div>Empty File Name</div>
+                        <a 
+                            target='_blank'
+                            className='bg-white mt-2 w-[100px] cursor pointer h-[30px] rounded-md text-indigo-600  px-2'>
+                            View
+                        </a>
+                    </div>
+                        )}
+                        {toBeReviewedPaper.length > 0 &&
                             toBeReviewedPaper.map((item, index) => (
-                        <div className='w-full sm:w-[250px] m-7 h-[150px] bg-indigo-600 rounded-lg shadow-md text-white flex flex-col justify-center items-center' key={index}>
-                            <div>{item.name}</div>
-                            <div>{item.file_name}</div>
-                            <div className='mt-2'>
-                            <button type='button' onClick={() => changeStatusHandler(item._id)} className='bg-white w-[100px] h-[30px] rounded-md text-indigo-600  px-2'>view</button>
-
-                            </div>
-                        </div>
+                                <div className='w-full sm:w-[270px] xl:w-[20%] h-[150px] xl:h-[200px] m-7  bg-indigo-600 rounded-lg shadow-md text-white flex flex-col justify-center items-center' key={index}>
+                                    <div>{item.user.firstName}</div>
+                                    <div>{item.file_name}</div>
+                                    <a href={item.avatar}
+                                        target='_blank'
+                                        onClick={() => changeStatusHandler(item._id)}
+                                        className='bg-white mt-2 w-[100px] h-[30px] rounded-md text-indigo-600  px-2'>
+                                        View
+                                    </a>
+                                </div>
                             ))}
                         {/*
                          <div className='w-[250px] h-[150px] bg-indigo-600 rounded-lg shadow-md text-white flex flex-col justify-center items-center'>
