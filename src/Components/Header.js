@@ -152,7 +152,6 @@ export default function Example() {
       setIfSignIn(true);
     }
   }
-
   useEffect(() => {
     isLogin();
   }, []);
@@ -171,7 +170,7 @@ export default function Example() {
               />
             </Link>
           </div>
-          <div className="-mr-2 -my-2 md:hidden">
+          <div className="-mr-2 -my-2 hidden">
             <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
               <span className="sr-only">Open menu</span>
               <MenuIcon className="h-6 w-6" aria-hidden="true" />
@@ -180,7 +179,7 @@ export default function Example() {
           <Popover.Group as="nav" className="hidden md:flex space-x-10">
 
           </Popover.Group>
-          <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+          <div className=" md:flex items-center justify-end md:flex-1 lg:w-0">
             {
               !ifSignIn ? (<div>
 
@@ -229,14 +228,10 @@ export default function Example() {
                       className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
                     >
                       Logout
-
                     </Link>
                   </div>
-
                 </div>
             }
-
-
           </div>
         </div>
       </div>
@@ -250,7 +245,7 @@ export default function Example() {
         leaveFrom="opacity-100 scale-100"
         leaveTo="opacity-0 scale-95"
       >
-        <Popover.Panel
+        {/* <Popover.Panel
           focus
           className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
         >
@@ -332,7 +327,7 @@ export default function Example() {
               </div>
             </div>
           </div>
-        </Popover.Panel>
+        </Popover.Panel> */}
       </Transition>
     </Popover>
   );
