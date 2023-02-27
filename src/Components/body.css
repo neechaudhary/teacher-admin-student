@@ -103,6 +103,7 @@
         display: block;
         width: 70%;
     }
+  
 }
 
 @media (max-width:500px) {
@@ -219,5 +220,18 @@
     
     h2.Barheading.mt-3.leading-10.text-black.text-5xl.font-medium.w-full {
         font-size: 40px;
+    }
+}
+@media only screen and (min-width:320px) and (max-width:450) {
+    h2.additionalHeading.mt-4.text-5xl.font-semibold.leading-8.w-full {
+        font-size: 30px;
+    }
+    
+    h2.additonalHeadingLower.mt-8.text-2xl.leading-8.w-full {
+        font-size: 20px;
+    }
+    
+    p.additionalDivPara.mt-8.leading-8.text-3xl.text-black.font-semibold {
+        font-size: 18px;
     }
 }
