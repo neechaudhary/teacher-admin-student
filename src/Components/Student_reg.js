@@ -23,6 +23,7 @@ const Student_reg = () => {
         axios.post(`${API}/signup`,data)
         .then((res) => {
             // console.log(res);
+            alert(res.data.message)
             window.location.href = "/signin";
         }).catch((err) => {
             // console.log(err);
