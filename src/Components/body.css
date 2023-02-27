@@ -10,6 +10,7 @@
 }
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+   
     h1.headingOne.flex.pb-10.flex-row.text-5xl.text-black.font-bold.max-w-xl {
         font-size: 40px;
     }
@@ -60,6 +61,9 @@
     }
 }
 @media (max-width:750px) {
+    .r-item.m-4.items-center.w-full {
+        margin: 0;
+    }
     .content.max-w-7xl.pt-4.px-8.m-auto.flex.pb-8 {
         display: flex;
         flex-wrap: wrap;

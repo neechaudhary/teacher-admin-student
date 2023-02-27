@@ -168,8 +168,8 @@ export default function Body() {
               <p className="paraBar mt-3 text-2xl w-full leading-10">
                 Here are few reasons why shilud you choose <span>school</span>{" "}
               </p>
-              <div className="reasonsitems  flex  flex-row justify-center w-full mt-8 ">
-                <div className="r-item m-4 items-center w-full">
+              <div className="reasonsitems  flex  flex-row justify-center items-stretch w-full mt-8 ">
+                <div className="r-item m-4 items-center w-full flex flex-col justify-between">
                   {" "}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -200,8 +200,8 @@ export default function Body() {
                   </button>
                 </div>
 
-                <div className="r-item   w-full   ">
-                  <div className="insideItemsSecurity m-4">
+                <div className="r-item m-4   w-full  ">
+                  <div className="insideItemsSecurity  flex flex-col justify-between h-full">
                     <div className="bsImg m-auto w-82 h-22">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -220,7 +220,7 @@ export default function Body() {
                       Industry best practice
                     </h2>
                     <p className="bestPracticePara mt-3 leading-8 text-xl">
-                      school support various sort's of online business{" "}
+                    We have complete privacy of your data
                     </p>
                     {/* for space  */}
                     <section className="spaceSectioin flex w-full pt-10 m-auto shrink-0 ">
@@ -230,9 +230,9 @@ export default function Body() {
                       Learn More{" "}
                     </button>
                     {/* for space  */}
-                    <section className="spaceSectioin flex w-full pt-10 m-auto shrink-0 ">
+                    {/* <section className="spaceSectioin flex w-full pt-10 m-auto shrink-0 ">
                       <div className="spaceDiv flex grow flex-row"></div>
-                    </section>
+                    </section> */}
                   </div>
                 </div>
               </div>
