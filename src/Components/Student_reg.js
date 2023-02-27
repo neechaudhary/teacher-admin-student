@@ -22,10 +22,18 @@ const Student_reg = () => {
         }
         axios.post(`${API}/signup`,data)
         .then((res) => {
-            console.log(res);
+            // console.log(res);
             window.location.href = "/signin";
         }).catch((err) => {
-            console.log(err);
+            // console.log(err);
+            if(err.response.data.message == 'User already registered'){
+                alert(err.response.data.message)
+            }
+            else{
+                alert(err.response.data.error)
+            }
+            
+            
         })
   
     }

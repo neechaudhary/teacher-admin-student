@@ -24,7 +24,12 @@ const Teacher_reg = () => {
                 console.log(res);
                 window.location.href = "/teacherlogin";
             }).catch((err) => {
-                console.log(err);
+                // console.log(err);
+                if(err.response.data.message){
+                    alert(err.response.data.message)
+                }else{
+                    alert(err.response.data.error)  
+                }
             })
 
     }

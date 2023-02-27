@@ -28,6 +28,7 @@ export default function TeacherLogin() {
       })
       .catch((err) => {
         console.log(err);
+        alert(err.response.data.error)
       });
   };
 
